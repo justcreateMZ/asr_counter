@@ -2,6 +2,7 @@
 # asr_counter counts number of done asr-s in ditto.av (my working environment)
 
 import os
+import datetime
 
 
 def score():  # shows current asr score
@@ -44,6 +45,7 @@ def counting():     # counting asr-s
             asr = open('asr.txt', 'a')
             asr.write(asr_type)
             asr.close()
+            print(datetime.datetime.now().strftime('%H:%M:%S'))
         score()
     score()
 
@@ -73,8 +75,6 @@ if action.lower() == 'reset':   # resets score
 input('\nPress enter to exit')
 
 # TODO change normal open to shelve (import shelve)
-
-# TODO add time of adding asr point
 
 # TODO: (import keyboard)
 '''https://stackoverflow.com/questions/48915822/
